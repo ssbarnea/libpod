@@ -146,6 +146,7 @@ endif
 lint: .gopathok varlink_generate ## Execute the source code linter
 	@echo "checking lint"
 	@./.tool/lint
+	git config --local --add format.signOff true
 
 golangci-lint: .gopathok varlink_generate .install.golangci-lint
 	$(GOBIN)/golangci-lint run --tests=false
